@@ -24,8 +24,9 @@ const Name = styled.h2`
 
 `;
 
-const Button = styled.button`
-
+const Button = styled.input`
+    height: 50px;
+    width: 50px;
 `;
 
 
@@ -37,7 +38,7 @@ class DisplayUsers extends Component {
                         <Name>{this.props.fName}</Name>
                         <Name>{this.props.sName}</Name>
                         <Name>{this.props.DoB}</Name>
-                        <Button onclick="myFunction()">Click me</Button>
+                        <Button type="image" src="https://www.shareicon.net/data/512x512/2015/10/18/658147_button_512x512.png" />
                 </Row>
             </Window>
         );
