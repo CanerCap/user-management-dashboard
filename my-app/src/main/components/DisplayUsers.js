@@ -3,7 +3,8 @@
  */
 import React, { Component } from 'react';
 import { Row} from 'react-flexbox-grid';
-import styled from 'styled-components';
+import UserView from './UserView';
+import styled, {keyframes} from 'styled-components';
 
 const Window = styled.div`
   background: #FAFAFA;
@@ -16,21 +17,47 @@ const Window = styled.div`
   &:hover {
     box-shadow: inset 9999px 9999px 9999px rgba(209,209,209,209.1);
   }
+  width: 80%;
+  margin: 0 auto;  
 `;
 
 const Name = styled.h2`
    color: black;
    font: 20px arial, sans-serif;
+`;
 
+const moveGradient = keyframes`
+  0%{transform: rotate(0deg)}
+  50%{transform: rotate(90deg)}
+  100%{transform: rotate(180deg);}
 `;
 
 const Button = styled.input`
     height: 50px;
     width: 50px;
+    transform: rotate(90deg);
+    align="right"
+    animation: ${moveGradient} 2s ease-out;
 `;
 
 
+
+
 class DisplayUsers extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showComponent: false,
+
+        };
+        this._onButtonClick = this._onButtonClick.bind(this);
+    }
+
+    _onButtonClick() {
+        this.setState({
+                showComponent: !this.state.showComponent,
+        });
+    }
     render() {
         return (
             <Window>
@@ -38,7 +65,12 @@ class DisplayUsers extends Component {
                         <Name>{this.props.fName}</Name>
                         <Name>{this.props.sName}</Name>
                         <Name>{this.props.DoB}</Name>
-                        <Button type="image" src="https://www.shareicon.net/data/512x512/2015/10/18/658147_button_512x512.png" />
+
+                    <Button type="image" src="http://www.theartics.com/public_html/imgs/arrow-icon-28.png" onClick={this._onButtonClick}/>
+                    {this.state.showComponent ?
+                        <UserView fName={this.props.fName} sName={this.props.sName} DoB={this.props.DoB} email={this.props.email} tele={this.props.tele}  /> :
+                    null
+                    }
                 </Row>
             </Window>
         );
