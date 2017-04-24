@@ -6,6 +6,7 @@ import { Row} from 'react-flexbox-grid';
 import UserView from './UserView';
 import styled, {keyframes} from 'styled-components';
 
+
 const Window = styled.div`
   background: #FAFAFA;
   border-radius: 2px;
@@ -26,21 +27,14 @@ const Name = styled.h2`
    font: 20px arial, sans-serif;
 `;
 
-const moveGradient = keyframes`
-  0%{transform: rotate(0deg)}
-  50%{transform: rotate(90deg)}
-  100%{transform: rotate(180deg);}
-`;
+
 
 const Button = styled.input`
     height: 50px;
     width: 50px;
     transform: rotate(90deg);
     align="right"
-    animation: ${moveGradient} 2s ease-out;
 `;
-
-
 
 
 class DisplayUsers extends Component {
@@ -48,7 +42,6 @@ class DisplayUsers extends Component {
         super(props);
         this.state = {
             showComponent: false,
-
         };
         this._onButtonClick = this._onButtonClick.bind(this);
     }
