@@ -62,13 +62,13 @@ class DisplayUsers extends Component {
         return (
             <Window>
                 <Row around="xs">
-                        <Name>{this.props.fName}</Name>
-                        <Name>{this.props.sName}</Name>
-                        <Name>{this.props.DoB}</Name>
+                        <Name>{this.props.forename}</Name>
+                        <Name>{this.props.surname}</Name>
+                        <Name>{this.props.dateOfBirth}</Name>
 
                     <Button type="image" src="http://www.theartics.com/public_html/imgs/arrow-icon-28.png" onClick={this._onButtonClick}/>
                     {this.state.showComponent ?
-                        <UserView fName={this.props.fName} sName={this.props.sName} DoB={this.props.DoB} email={this.props.email} tele={this.props.tele}  /> :
+                        <UserView forename={this.props.forename} surname={this.props.surname} dateOfBirth={this.props.dateOfBirth} emailAddress={this.props.emailAddress}  /> :
                     null
                     }
                 </Row>
