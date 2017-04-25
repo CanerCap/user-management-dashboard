@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import FormContainer from './components/FormContainer'
 import DisplayUsers from './components/DisplayUsers';
-import UserView from './components/UserView';
+// import UserView from './components/UserView';
 
-
+/*
 var Test = React.createClass({
     render: function() {
         var userComponents = this.props.userInfo.map(function(userInfo) {
@@ -11,11 +12,11 @@ var Test = React.createClass({
         });
         return <div>{userComponents}</div>;
     }
-});
+});*/
 
 
 
-var userInfo = [
+/*var userInfo = [
     {fName:'Caner',sName:'Shefik',DoB:'23/03/1998',email:'caner@gmail.com',tele:'123456789'},
     {fName:'Hello',sName:'Shefik',DoB:'23/03/1998',email:'caner@gmail.com',tele:'123456789'},
     {fName:'Caner',sName:'Shefik',DoB:'23/03/1998',email:'caner@gmail.com',tele:'123456789'},
@@ -32,7 +33,7 @@ var userInfo = [
     {fName:'Caner',sName:'Shefik',DoB:'23/03/1998',email:'caner@gmail.com',tele:'123456789'},
     {fName:'Caner',sName:'Shefik',DoB:'23/03/1998',email:'caner@gmail.com',tele:'123456789'},
     {fName:'Alan',sName:'Bob',DoB:'20/08/1962',email:'caner@gmail.com',tele:'123456789'}
-]
+]*/
 
 
 class App extends Component {
@@ -43,8 +44,8 @@ class App extends Component {
           <h2>User Dashboard</h2>
         </div>
         <p className="App-intro">
-            <Test userInfo={userInfo} />
-
+            {/*<Test userInfo={userInfo} />*/}
+            <FormContainer />
 
         </p>
       </div>
