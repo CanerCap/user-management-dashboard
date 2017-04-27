@@ -23,7 +23,6 @@ class App extends Component {
         <Router history={browserHistory}>
             <div>
                 <Layout/>
-               
                 <Route path="/users" component={MultiUsers}/>
                 <Route path="/create" component={FormContainer}/>
 
