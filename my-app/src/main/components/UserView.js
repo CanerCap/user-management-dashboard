@@ -11,8 +11,8 @@ const Window = styled.div`
   font-family: Helvetica;
   box-sizing: border-box;
   margin-bottom: 20px;
-  width: 80%;
   margin: 0 auto;
+  
 `;
 
 const Outer = styled.div`
@@ -55,7 +55,7 @@ class UserView extends Component {
     render() {
         return (
             <Outer>
-            <UserIcon src="http://wfarm4.dataknet.com/static/resources/icons/set110/7d2f7e06.png" alt="User Icon">
+            <UserIcon src={this.props.profileImage} alt="User Icon">
             </UserIcon>
                 <Window>
                     <Text>First Name: {this.props.forename}</Text>
