@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import MultiUsers from './components/MultiUsers';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import FormContainer from './components/FormContainer';
-import {BrowserHistory, IndexRoute} from 'react-router';
+import {BrowserHistory, Redirect} from 'react-router';
 
 
 
@@ -23,9 +23,9 @@ class App extends Component {
         <Router history={browserHistory}>
             <div>
                 <Layout/>
-                <Route path="/users" component={MultiUsers}/>
+                <Route name="users" path="/users" component={MultiUsers}/>
                 <Route path="/create" component={FormContainer}/>
-
+                <Redirect from="/" to="users" />
             </div>
 
         </Router>
